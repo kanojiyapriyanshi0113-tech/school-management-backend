@@ -44,12 +44,13 @@ type Fee struct {
 }
 
 type Exam struct {
-    ID        uint      `gorm:"primaryKey" json:"id"`
-    ExamName  string    `gorm:"not null" json:"exam_name"`
-    ClassID   uint      `json:"class_id"`
-    StartDate string    `json:"start_date"`
-    EndDate   string    `json:"end_date"`
-    CreatedAt time.Time `json:"created_at"`
+    ID           uint      `gorm:"primaryKey" json:"id"`
+    ExamName     string    `gorm:"not null" json:"exam_name"`
+    ClassID      uint      `json:"class_id"`
+    StartDate    string    `json:"start_date"`
+    EndDate      string    `json:"end_date"`
+    Status       string    `gorm:"default:draft" json:"status"`
+    CreatedAt    time.Time `json:"created_at"`
 }
 
 type Mark struct {
@@ -93,3 +94,4 @@ type Admission struct {
     CreatedAt     time.Time `json:"created_at"`
     UpdatedAt     time.Time `json:"updated_at"`
 }
+
